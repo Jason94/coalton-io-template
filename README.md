@@ -16,8 +16,33 @@ qlot install
 
 This installs all of the dependencies into `./.qlot/`
 
-## 2) Run main from the command line
+## 2) Run the program
 
+### Run from the terminal
+
+#### SBCL
+```sh
+qlot exec sbcl --no-userinit \
+  --load .qlot/setup.lisp \
+  --eval '(asdf:load-system "coalton-io-template/run")' \
+  --eval '(uiop:quit)'
+```
+
+#### Roswell
+```sh
+qlot exec ros run +Q \
+  --load .qlot/setup.lisp \
+  --eval '(asdf:load-system "coalton-io-template/run")' \
+  --eval '(uiop:quit)'
+  ```
+
+### Run from the REPL
+
+Alternatively, you can run main from a REPL. First, load a REPL (see #3). Then from within the REPL run:
+```lisp
+(asdf:load-system "coalton-io-template/run")
+
+```
 
 ## 3) Launch a REPL with code + deps loaded
 
@@ -56,7 +81,7 @@ To launch Emacs with local project dependencies, run this in the terminal from t
 qlot exec emacs
 ```
 
-For other ways to integrate the local dependencies into Emacs, [see the QLot documentation](https://github.com/fukamachi/qlot?tab=readme-ov-file#working-with-slime).
+For other ways to integrate the local dependencies into Emacs, [see the Qlot documentation](https://github.com/fukamachi/qlot?tab=readme-ov-file#working-with-slime).
 
 ## 5) Run the tests
 
@@ -85,30 +110,4 @@ Alternatively, you can run the tests from a REPL. First, load a REPL (see #3 abo
 (asdf:test-system "coalton-io-template")
 ```
 
-## 6) Run the program main
 
-### Run main from the terminal
-
-#### SBCL
-```sh
-qlot exec sbcl --no-userinit \
-  --load .qlot/setup.lisp \
-  --eval '(asdf:load-system "coalton-io-template/run")' \
-  --eval '(uiop:quit)'
-```
-
-#### Roswell
-```sh
-qlot exec ros run +Q \
-  --load .qlot/setup.lisp \
-  --eval '(asdf:load-system "coalton-io-template/run")' \
-  --eval '(uiop:quit)'
-  ```
-
-### Run main from the REPL
-
-Alternatively, you can run main from a REPL. First, load a REPL (see #3 above). Then from within the REPL run:
-```lisp
-(asdf:load-system "coalton-io-template/run")
-
-```
