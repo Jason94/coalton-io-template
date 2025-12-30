@@ -84,3 +84,31 @@ Alternatively, you can run the tests from a REPL. First, load a REPL (see #3 abo
 ```lisp
 (asdf:test-system "coalton-io-template")
 ```
+
+## 6) Run the program main
+
+### Run main from the terminal
+
+#### SBCL
+```sh
+qlot exec sbcl --no-userinit \
+  --load .qlot/setup.lisp \
+  --eval '(asdf:load-system "coalton-io-template/run")' \
+  --eval '(uiop:quit)'
+```
+
+#### Roswell
+```sh
+qlot exec ros run +Q \
+  --load .qlot/setup.lisp \
+  --eval '(asdf:load-system "coalton-io-template/run")' \
+  --eval '(uiop:quit)'
+  ```
+
+### Run main from the REPL
+
+Alternatively, you can run main from a REPL. First, load a REPL (see #3 above). Then from within the REPL run:
+```lisp
+(asdf:load-system "coalton-io-template/run")
+
+```
