@@ -1,0 +1,6 @@
+dist ultralisp http://dist.ultralisp.org/
+
+git coalton-threads https://github.com/garlic0x1/coalton-threads :branch master
+ultralisp Jason94-coalton-io
+
+git coalton https://github.com/coalton-lang/coalton.git :branch main
