@@ -6,6 +6,10 @@
  (:class qlot/source/dist:source-dist
   :initargs (:distribution "https://dist.ultralisp.org/" :%version :latest)
   :version "20251230000500"))
+("named-readtables" .
+ (:class qlot/source/git:source-git
+  :initargs (:remote-url "https://github.com/melisgl/named-readtables" :branch "master")
+  :version "git-6eea56674442b884a4fee6ede4c8aad63541aa5b"))
 ("coalton-threads" .
  (:class qlot/source/git:source-git
   :initargs (:remote-url "https://github.com/garlic0x1/coalton-threads" :branch "master")

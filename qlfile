@@ -1,5 +1,6 @@
 dist ultralisp http://dist.ultralisp.org/
 
+git named-readtables https://github.com/melisgl/named-readtables :branch master
 git coalton-threads https://github.com/garlic0x1/coalton-threads :branch master
 ultralisp Jason94-coalton-io
 
